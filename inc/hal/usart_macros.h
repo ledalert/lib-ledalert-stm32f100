@@ -3,7 +3,7 @@
  
 */
 #ifndef _USART_MACRO_H_
-#include "uart.h"
+#include "hal/usart.h"
 
 
 /*! Create usart, configured with 8 data bits, 1 stop bit, no parity */

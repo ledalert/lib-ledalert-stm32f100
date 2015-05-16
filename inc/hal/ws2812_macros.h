@@ -3,9 +3,9 @@
  
 */
 #ifndef _WS2812_MACRO_H_
-#include "ws2812.h"
-#include "gpio_macro.h"
-#include "timer_macro.h"
+#include "hal/ws2812.h"
+#include "hal/gpio_macros.h"
+#include "hal/timer_macros.h"
 
 //WS2812_INSTANCE(StatusLED, &StatusLED_DMA, &StatusLED_pin);
 

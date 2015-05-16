@@ -1,5 +1,8 @@
 /*! \file uart.h
     \brief UART HAL Include file
+
+	@todo better names for stuff
+	@todo use const qualifier for read only data (volatile const??)
  
 */
 #ifndef _UART_H_

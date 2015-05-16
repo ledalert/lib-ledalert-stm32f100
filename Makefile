@@ -24,7 +24,7 @@ default: $(TARGET)
 
 
 $(TARGET): $(SUB_BUILD_DIRS) $(OBJECTS) $(LIBS)
-	$(AR) -r $@ $(OBJECTS) 
+	$(AR) rcs $@ $(OBJECTS) 
 
 $(BUILD_DIR)hal:
 	mkdir -p $@

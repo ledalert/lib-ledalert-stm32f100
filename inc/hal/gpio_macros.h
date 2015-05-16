@@ -4,6 +4,8 @@
 */
 #ifndef _GPIO_MACRO_H_
 
+#include "hal/gpio.h"
+
 /*! Declares a new GPIO port 
 	@param Name Variable name
 	@portbasep{Port}
