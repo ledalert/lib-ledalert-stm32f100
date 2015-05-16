@@ -4,7 +4,7 @@
 include mk/toolchain-settings.mk
 
 CPU_FLAGS = -mthumb -mcpu=cortex-m3 -msoft-float -DSTM32F1
-CFLAGS = -c -std=gnu99 -Os -Wall -fno-common -ffunction-sections -fdata-sections $(CPU_FLAGS) $(INCLUDE_DIRS:%=-I%)
+CFLAGS = -std=gnu99 -Os -Wall -fno-common -ffunction-sections -fdata-sections $(CPU_FLAGS) $(INCLUDE_DIRS:%=-I%)
 
 LINK_FLAGS = 	$(CPU_FLAGS) \
 				--static -nostartfiles \
@@ -17,14 +17,14 @@ $(BUILD_DIR):
 	mkdir -p $(BUILD_DIR)
 
 $(OBJECTS): $(BUILD_DIR)%.o: %.c $(LIBS)
-	$(CC) $(CFLAGS) -MMD -o $@ $<
+	$(CC) -c $(CFLAGS) -MMD -o $@ $<
 	@cp $(BUILD_DIR)$*.d $(BUILD_DIR)$*.P; \
 	sed -e 's/#.*//' -e 's/^[^:]*: *//' -e 's/ *\\$$//' -e '/^$$/ d' -e 's/$$/ :/' < $(BUILD_DIR)$*.d >> $(BUILD_DIR)$*.P; \
 	rm -f $(BUILD_DIR)$*.d
 
 
 clean:
-	rm -f $(OBJECTS)
+	rm -f $(OBJECTS) $(SOURCES:%.c=$(BUILD_DIR)%.P)
 
 .PHONY: clean
 

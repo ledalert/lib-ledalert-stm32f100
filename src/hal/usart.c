@@ -2,7 +2,7 @@
     \brief USART HAL driver
  
 */
-#include "usart.h"
+#include "hal/usart.h"
 #include <math.h>
 
 /*! Configure USART to default values */

@@ -2,8 +2,8 @@
     \brief ADC HAL implementation
  
 */
-#include "adc.h"
-#include "timer.h"
+#include "hal/adc.h"
+#include "hal/timer.h"
 #include <libopencm3/cm3/nvic.h>
 
 

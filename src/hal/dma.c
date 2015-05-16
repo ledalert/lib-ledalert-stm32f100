@@ -2,7 +2,7 @@
     \brief DMA implementation
  
 */
-#include "dma.h"
+#include "hal/dma.h"
 
 
 void dma_init(struct dma_config* dma, enum hw_init_state state) {

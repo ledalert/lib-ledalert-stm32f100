@@ -2,7 +2,7 @@
     \brief Implementation of WS2812 HAL
  
 */
-#include "ws2812.h"
+#include "hal/ws2812.h"
 
 
 

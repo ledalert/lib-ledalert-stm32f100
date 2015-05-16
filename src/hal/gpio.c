@@ -2,7 +2,7 @@
     \brief GPIO HAL implementation
  
 */
-#include "gpio.h"
+#include "hal/gpio.h"
 
 
 

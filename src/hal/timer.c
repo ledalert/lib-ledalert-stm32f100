@@ -2,7 +2,7 @@
     \brief Timer HAL implementation
  
 */
-#include "timer.h"
+#include "hal/timer.h"
 
 
 

@@ -28,7 +28,6 @@
 #define PWM_PERIOD 4096
 #define PWM_TOP (PWM_PERIOD - 1)
 
-void hw_init();
 /*! This is the state of the hardware abstraction layer */
 enum hw_init_state {
 	HW_INIT_UNINITIALIZED,
@@ -54,13 +53,21 @@ enum hw_init_state {
 	HW_INIT_INITIALIZED,
 };
 
-
-#define HW_PRE_INIT(call, obj)\
+/*! Init one hardware driver */
+#define HW_INIT_DRIVER(call, obj)\
 	call(obj, HW_INIT_RCC);\
 	call(obj, HW_INIT_GPIO);\
 	call(obj, HW_INIT_PRE_NVIC);\
 	call(obj, HW_INIT_NVIC);\
 	call(obj, HW_INIT_POST_INIT);
+
+/*! Init all hardware */
+#define HW_INIT_ALL(call)\
+	call(HW_INIT_RCC);\
+	call(HW_INIT_GPIO);\
+	call(HW_INIT_PRE_NVIC);\
+	call(HW_INIT_NVIC);\
+	call(HW_INIT_POST_INIT);
 
 
 

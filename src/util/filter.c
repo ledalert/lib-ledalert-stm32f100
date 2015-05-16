@@ -2,7 +2,7 @@
     \brief Implementation of filter functions
  
 */
-#include "filter.h"
+#include "util/filter.h"
 
 /*! Adds a sample to the filter
  	@param data Filter state

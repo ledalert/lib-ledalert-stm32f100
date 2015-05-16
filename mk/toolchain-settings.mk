@@ -8,5 +8,6 @@ ifneq ($(origin TOOLCHAIN), undefined)
 	OBJCOPY = $(TOOLCHAIN)objcopy
 	OBJDUMP = $(TOOLCHAIN)objdump
 	SIZE = $(TOOLCHAIN)size
+	AR = $(TOOLCHAIN)ar
 
 endif

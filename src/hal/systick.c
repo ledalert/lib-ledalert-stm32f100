@@ -2,7 +2,7 @@
     \brief Systick HAL implementation
  
 */
-#include "systick.h"
+#include "hal/systick.h"
 #include <libopencm3/cm3/systick.h>
 #include <libopencm3/stm32/rcc.h>
 
