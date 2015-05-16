@@ -1,0 +1,2 @@
+The makefile should support both using it's own local libopencm3 or use libopencm3 from somewhere else
+This is because we might want to include this lib as a submodule to a project that alreay has libopencm3 as a submodule
