@@ -14,6 +14,7 @@
 */
 void ws2812_configure_timer(struct ws2812* led) {
 	DEFAULT(led->configuration->ccr->configuration->timer->auto_reload, rcc_apb1_frequency / led->configuration->frequency - 1);
+	DEFAULT(led->configuration->ccr->configuration->mode, timer_ccr_mode_pwm1);
 }
 
 /*! Apply default configuration to GPIO 

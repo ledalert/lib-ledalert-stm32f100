@@ -11,11 +11,18 @@
 
 struct timer;
 
+/*! Mode of CCR channel */
+enum timer_ccr_mode {
+	timer_ccr_mode_pwm1,	/*!< Normal PWM */
+	timer_ccr_mode_pwm2,	/*!< Inverted PWM */
+};
+
 struct timer_ccr_config {
 	struct timer* timer;
 	enum tim_oc_id channel;
 	struct dma_channel_config* dma;
 	volatile uint32_t* reg;
+	enum timer_ccr_mode mode;
 
 };
 

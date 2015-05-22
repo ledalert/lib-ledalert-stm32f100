@@ -32,7 +32,17 @@ void timer_ccr_init(struct timer_ccr* ccr, enum hw_init_state state) {
 
 					CCER_SET = TIM_CCER_CC3NE;
 					CCER_CLEAR = TIM_CCER_CC3NP;
-					CCMR2_SET = TIM_CCMR2_OC3M_PWM1 | TIM_CCMR2_OC3PE;
+					CCMR2_SET =  TIM_CCMR2_OC3PE;
+
+					switch (ccr->configuration->mode) {
+						case timer_ccr_mode_pwm1:
+							CCMR2_SET |= TIM_CCMR2_OC3M_PWM1;
+							break;
+						case timer_ccr_mode_pwm2:
+							CCMR2_SET |= TIM_CCMR2_OC3M_PWM2;
+							break;
+					}
+
 					ccr->configuration->reg = &TIM_CCR3(ccr->configuration->timer->configuration->timer);
 
 					DEFAULT(ccr->configuration->dma->perhipheral, ccr->configuration->reg);
@@ -44,7 +54,17 @@ void timer_ccr_init(struct timer_ccr* ccr, enum hw_init_state state) {
 				case TIM_OC3:
 
 					CCER_SET = TIM_CCER_CC3E;
-					CCMR2_SET = TIM_CCMR2_OC3M_PWM1 | TIM_CCMR2_OC3PE;
+					CCMR2_SET = TIM_CCMR2_OC3PE;
+
+					switch (ccr->configuration->mode) {
+						case timer_ccr_mode_pwm1:
+							CCMR2_SET |= TIM_CCMR2_OC3M_PWM1;
+							break;
+						case timer_ccr_mode_pwm2:
+							CCMR2_SET |= TIM_CCMR2_OC3M_PWM2;
+							break;
+					}
+
 
 					ccr->configuration->reg = &TIM_CCR3(ccr->configuration->timer->configuration->timer);
 
